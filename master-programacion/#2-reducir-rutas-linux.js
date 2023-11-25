@@ -12,16 +12,12 @@ simplificarRuta("/home//pruebas/");    // Salida: /home/pruebas
 */
 
 function simplifyRoute(route){
-    // //reducir las barras duplicadas
-    // let modifiedRoute= route.replace(/\/{2,}/g, '/');
-    // //eliminar barras del final
-    // modifiedRoute = modifiedRoute.replace(/\/+$/, '');
-
+    
     const routeArr =route.split("/");
     let newRoute = '/';
-    for(const element of routeArr){
-        if(element!== '') newRoute += element+'/';
-        if (element=== '.' || element ==='..') newRoute = '/';
+    for(const elem of routeArr){
+        if(elem!== '' || elem !=='.') newRoute += elem+'/';
+        if (elem ==='..') newRoute = '/';
     }
     newRoute = newRoute.replace(/^(.+)\/+$/, '$1');
 
