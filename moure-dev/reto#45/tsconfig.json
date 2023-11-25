@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "target": "es6",
+      "module": "commonjs",
+      "outDir": "reto#45/dist",
+      "rootDir": "reto#45/src",
+      "strict": true
+    },
+  }
