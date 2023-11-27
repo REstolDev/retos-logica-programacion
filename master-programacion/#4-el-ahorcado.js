@@ -18,15 +18,21 @@ Te quedan 5 intentos
  
 
 */
+
 const prompt = require("prompt-sync")();
 
 function hangmanGame(secretWord) {
   //convertir la palabra en un array
   const wordArr = secretWord.split("");
+  
   let resultArr = wordArr.map((e) => "_");
+  //otra manerad de hacerlo 'let resultArr = "_".repeat(secretWord.length);'
+
   let cont = 5;
 
   //crear un loop
+  //otra manera de hacerlo es 
+  //while(cont>0 && wordArr.toString()===resultArr.toString()) y después un mensaje con if
   do {
     //pedir una letra
     let userInput = prompt("Adivina la letra:");
@@ -44,7 +50,7 @@ function hangmanGame(secretWord) {
     if(isFound===false) cont--;
     
   //comprobar si la palabra ya esta completa
-    if(wordArr.toString()===resultArr.toString()){
+    if(secretWord===resultArr.toString()){
       return `Felicidades has completado el ahorcado, la palabra secreta era "${secretWord}"`;
     } 
     else{
