@@ -61,9 +61,9 @@ function hangmanGame(secretWord) {
       `);
     }
   }
-  while(cont>1);
+  while(cont>0);
 
   return `Lo siento, has perdido!! La palabra secreta era "${secretWord}"`;
 }
 
-console.log(hangmanGame("ramon"));
+console.log(hangmanGame("ramonoter"));
